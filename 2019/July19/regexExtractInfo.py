@@ -56,5 +56,6 @@ for ZIP in zipRegex.findall(text):
 if len(res) > 0:
     pyperclip.copy('\n'.join(res))
     print('Copied to clipboard...')
+    # Cmd-V into a text editor to check
 else:
     print('phone numbers or email addresses not found')
