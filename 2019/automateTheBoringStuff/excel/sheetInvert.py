@@ -2,7 +2,7 @@ import openpyxl
 from openpyxl.utils import get_column_letter, column_index_from_string
 
 wkbk = str(input('enter workbook name| '))
-wb = openpyxl.load_workbook('avengers.xlsx')
+wb = openpyxl.load_workbook(wkbk)
 wb_inv = openpyxl.Workbook()
 sheet = wb.active
 sheet_inv = wb_inv.active
