@@ -3,7 +3,7 @@
 import PyPDF2 as pypdf2
 import os
 
-path = '/Users/mehuljangir/Code/Python/Months/Sept19/PDF/Paranoia' #str(input('enter root path| '))
+path = str(input('enter root path| '))
 password = str(input('enter password| '))
 
 for (root, dirs, files) in os.walk(path):
