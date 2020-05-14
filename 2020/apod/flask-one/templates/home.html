@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>NASA APOD</title>
+  </head>
+  <body style='background-color: #d1d7e0;'>
+      <div class="content-section text-center" style="margin-top:10%; margin-left:5%; margin-right:5%;">
+      <form method="post" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class='form-group'>
+          <legend class="border-bottom mb-4"></legend>
+
+          <div class="form-group">
+
+            {{ form.email.label(class="form-control-label") }}
+
+            {% if form.email.errors %}
+              {{ form.email(class="form-control form-control-lg is-invalid")}}
+              <div class="invalid-feedback">
+                {% for error in form.email.errors%}
+                  <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form.email(class='form-control form-control-lg') }}
+            {% endif %}
+
+          </div>
+        </fieldset>
+        <div class="form-group">
+          {{ form.submit(class='btn btn-outline-info') }}
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
