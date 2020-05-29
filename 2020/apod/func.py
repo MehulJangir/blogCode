@@ -1,23 +1,23 @@
 import smtplib, ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from email.mime.image import MIMEImage
+# from email.mime.image import MIMEImage
 
 ####### Getting NASA APOD Image ########
 import requests, urllib, json, os
 
-key = "onIzrtyvGnoYVvx5UisApmgv8hJ2h7Uh1rE4MpRk"
-url = "https://api.nasa.gov/planetary/apod?api_key={}".format(key)
-file = requests.get(url)
-file.raise_for_status()
-urllib.request.urlretrieve(json.loads(file.text)['url'], "nasaapodsample.jpg")
+# key = "onIzrtyvGnoYVvx5UisApmgv8hJ2h7Uh1rE4MpRk"
+# url = "https://api.nasa.gov/planetary/apod?api_key={}".format(key)
+# file = requests.get(url)
+# file.raise_for_status()
+# urllib.request.urlretrieve(json.loads(file.text)['url'], "nasaapodsample.jpg")
 ########################################
 
 smtp_server =  'smtp.gmail.com'
 port = 587
-sender_email = "mehulpy@gmail.com"
+sender_email = "mjangir@jpischool.com"
 receiver_email = "mehuljangir42@gmail.com"
-password =  "notch@jeb_" #input("enter password for {}| ".format(sender_email))
+password =  "mehul@123" #input("enter password for {}| ".format(sender_email))
 
 # using MIME for stylised emails
 message = MIMEMultipart("alternative")
@@ -53,9 +53,9 @@ message.attach(part1)
 message.attach(part2)
 
 # attaching our sample image
-img_data = open("nasaapodsample.jpg", 'rb').read()
-image = MIMEImage(img_data, name=os.path.basename("nasaapodsample.jpg"))
-message.attach(image)
+# img_data = open("nasaapodsample.jpg", 'rb').read()
+# image = MIMEImage(img_data, name=os.path.basename("nasaapodsample.jpg"))
+# message.attach(image)
 
 
 # create secure SSL context
